@@ -22,7 +22,6 @@
     ","
   ],
   "disallowMixedSpacesAndTabs": true,
-  "disallowTrailingWhitespace": true,
   "disallowTrailingComma": true,
   "disallowKeywords": [ "with" ],
   "disallowMultipleLineBreaks": true,
@@ -53,9 +52,7 @@
     "typeof"
   ],
   "safeContextKeyword": "target",
-  "validateLineBreaks": "LF",
   "validateQuoteMarks": "'",
-  "validateIndentation": 2,
   "excludeFiles": [
     "node_modules/**",
     "coverage/*",
