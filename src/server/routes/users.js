@@ -4,16 +4,17 @@ const router = express.Router();
 
 const knex = require('../db/knex');
 const validate = require('./validation');
+const userQueries = require('../db/queries.users');
 
 
 router.get('/', (req, res, next) => {
-    knex('users').select('*')
-    .then((users) => {
-        res.status(200).json({ status: 'success', data: users });
-    })
-    .catch((err) => {
-        res.status(500).json({ status: 'error', data: err });
-    });
+    userQueries.getAllUsers((err, users) => {
+        if (err) {
+            res.status(500).json({ status: 'error', data: err });
+        } else {
+            res.status(200).json({ status: 'success', data: users });
+        }
+    });   
 });
 
 router.get('/:id', validate.validateUserResources, (req, res, next) => {
