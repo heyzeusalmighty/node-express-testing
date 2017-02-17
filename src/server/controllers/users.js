@@ -11,4 +11,4 @@ function filterByYear(arrayOfUsers, year, callback) {
 
 module.exports = {
     filterByYear
-}
+};
